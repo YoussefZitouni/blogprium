@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   def new
   end
   # Fonction servant a voir les utilisateurs en servant de leur id like /users/1
@@ -22,6 +24,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profil mis à jour !"
+      redirect_to @user
+
+    else
+      render 'edit'
+    end
+  end
   private
 
   def user_params
@@ -29,5 +45,11 @@ class UsersController < ApplicationController
      :password_confirmation)
   end
 
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Connectez vous svp"
+      redirect_to login_url
+    end
+  end
 
 end
