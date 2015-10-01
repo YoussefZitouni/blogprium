@@ -16177,3 +16177,297 @@ Redirected to http://test.host/microposts
 Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
   [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "microposts"[0m
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$yd67ztc77d7AqtAgnX8QQu9y2tqvcakkenXMpKcy0phslteim8AYi', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$yd67ztc77d7AqtAgnX8QQu9y2tqvcakkenXMpKcy0phslteim8AYi', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$sDAj7RpVOX2AtywSp0g63.NiUXyOfhrxOifVifz59thHUtoj8dEey', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$sDAj7RpVOX2AtywSp0g63.NiUXyOfhrxOifVifz59thHUtoj8dEey', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$u0MmfJ/tHs5VE5KOaeRr0uRdCSKl6m7VWhFd.FRTlqKS60LygV0Ha', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$u0MmfJ/tHs5VE5KOaeRr0uRdCSKl6m7VWhFd.FRTlqKS60LygV0Ha', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$PwM6lGvoipd3f9z7Sv19fOlkQRL3CfaiodVlu/gLF4bP7hPSr5epa', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$PwM6lGvoipd3f9z7Sv19fOlkQRL3CfaiodVlu/gLF4bP7hPSr5epa', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$lO0ke/Vqb7HfenxpGzLBiu1Rwfv0H9578iBIftuISK4CvM.IwN5Hu', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$lO0ke/Vqb7HfenxpGzLBiu1Rwfv0H9578iBIftuISK4CvM.IwN5Hu', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$qcv1IIruIya2yA5T4lHchuMrhdNcqirf6R4w31soe1UePt9f32dxe', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$qcv1IIruIya2yA5T4lHchuMrhdNcqirf6R4w31soe1UePt9f32dxe', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$SUeEM4UKhD.T7jSQMb/fyurFJjFIHyRdBjz6AHSnVaxbWhck4zLDm', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$SUeEM4UKhD.T7jSQMb/fyurFJjFIHyRdBjz6AHSnVaxbWhck4zLDm', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$024.X7FOYSH5eeyiGXGJkuUMAi/rGf/5LuhXFdtTSQPLcTTXB79nm', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$024.X7FOYSH5eeyiGXGJkuUMAi/rGf/5LuhXFdtTSQPLcTTXB79nm', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$bOVtivgraKGv/pxjbVapN.EDwW9P1K/MmugEuK5B48rutbXyXH4jW', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$bOVtivgraKGv/pxjbVapN.EDwW9P1K/MmugEuK5B48rutbXyXH4jW', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$410q0xZpRm/GU/4HhQr0DuApr79dJNDu5QPsAAbG8f1iIU.EzPONW', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$410q0xZpRm/GU/4HhQr0DuApr79dJNDu5QPsAAbG8f1iIU.EzPONW', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$DJ0yj5mhRFOTtC2lHAJN1OfuYstQKcsgmgxzoNL.jeHKnQZ2wstyq', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$DJ0yj5mhRFOTtC2lHAJN1OfuYstQKcsgmgxzoNL.jeHKnQZ2wstyq', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$OGo1QGh39wE/.dvfQcJEY.ujosr2RglYtFXVTLBm5j.6ebKXjInbO', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$OGo1QGh39wE/.dvfQcJEY.ujosr2RglYtFXVTLBm5j.6ebKXjInbO', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$a7ITwxPvNAN8LBIEFy4CjeGGHJgOIvDsx3lpKdyLUQDK3IQK6/24u', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$a7ITwxPvNAN8LBIEFy4CjeGGHJgOIvDsx3lpKdyLUQDK3IQK6/24u', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Xg6bphAdISb1fxKiuw4FLOYqQWZ0YKja5HnLGno3Dxro2xcY.0TEi', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Xg6bphAdISb1fxKiuw4FLOYqQWZ0YKja5HnLGno3Dxro2xcY.0TEi', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Z2FQP85l5BcuFaR0.hwFSuj9zNkX.b/LZ.O.RKO4A1DJJoNy3q3Ge', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Z2FQP85l5BcuFaR0.hwFSuj9zNkX.b/LZ.O.RKO4A1DJJoNy3q3Ge', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$cFkYa5t8/qtTRcBvT12/OObPIY2mynYRgFvXLwfySRTtgDLdJjCIS', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$cFkYa5t8/qtTRcBvT12/OObPIY2mynYRgFvXLwfySRTtgDLdJjCIS', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$k8W9ODoMvaCPeZWcrtgXieGAyDtFZ.gB6DX8VTC/On5VAKnQBXQpK', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$k8W9ODoMvaCPeZWcrtgXieGAyDtFZ.gB6DX8VTC/On5VAKnQBXQpK', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$hvZKl4oYhs8AekQZFOj4p.35lQH6SbO3ccNvEiIH7LTfMUm7FQTsu', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$hvZKl4oYhs8AekQZFOj4p.35lQH6SbO3ccNvEiIH7LTfMUm7FQTsu', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$xkghK0.jwoBYElIL0cK9XuIxKA1.uG9ZDBDWN8A/12PoNebNCnN9.', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$xkghK0.jwoBYElIL0cK9XuIxKA1.uG9ZDBDWN8A/12PoNebNCnN9.', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$qW0GYGs/UhceOGe83mz8XOmQ9hmZgoO3odXaCecYVG4PK.V/QQTRC', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$qW0GYGs/UhceOGe83mz8XOmQ9hmZgoO3odXaCecYVG4PK.V/QQTRC', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$iR9NcTcj4R3KAKbNWPWp9eLQ/kNqlCixFsq1.yXPeTS09jaKW2WcG', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$iR9NcTcj4R3KAKbNWPWp9eLQ/kNqlCixFsq1.yXPeTS09jaKW2WcG', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$fATwRIWIIETTkUMXu7cqfuvB1AZoZs/kjfk/788I2qFjnkZ/jmOXe', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$fATwRIWIIETTkUMXu7cqfuvB1AZoZs/kjfk/788I2qFjnkZ/jmOXe', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$MdEE4u6AQ5n8f8reVWcTh.pjzlHZSvVsFVhsPUQ6pTfz5z.aVuzqO', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$MdEE4u6AQ5n8f8reVWcTh.pjzlHZSvVsFVhsPUQ6pTfz5z.aVuzqO', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$N8Q7ULQDL754nFUIW2A0XeQcGkOq07i7OX1lyO3sZzdeB/hrMGFke', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$N8Q7ULQDL754nFUIW2A0XeQcGkOq07i7OX1lyO3sZzdeB/hrMGFke', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Hr5hKYxlrx6hCZ7V99fjZu31zybqkSQ/jysaT.jGyZWoF2s1KMU92', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$Hr5hKYxlrx6hCZ7V99fjZu31zybqkSQ/jysaT.jGyZWoF2s1KMU92', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$t2gQwVI3IEH0gnCZ5nSA0O4P6/v5uTwZ939SVBK2wVBMuG8Uc7BUu', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$t2gQwVI3IEH0gnCZ5nSA0O4P6/v5uTwZ939SVBK2wVBMuG8Uc7BUu', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$MDMr9RIn2sB5ENTXBi0nyO1eGPunfzCYwgSbu/FVVjxy0vihQucL2', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$MDMr9RIn2sB5ENTXBi0nyO1eGPunfzCYwgSbu/FVVjxy0vihQucL2', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$n/xklFQsUX912DSPYL5.ye7wjfotlgB0Ms18PWBm5dv.5dA20LDim', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$n/xklFQsUX912DSPYL5.ye7wjfotlgB0Ms18PWBm5dv.5dA20LDim', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$/eDNpGoRZ9Meswyr2CWZ8.QtP1.255WyLwm103lEHIwQVVttC7Nmi', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$/eDNpGoRZ9Meswyr2CWZ8.QtP1.255WyLwm103lEHIwQVVttC7Nmi', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$hOfjDMDHAixonvDDRFnnAuhz64UAsOlXcEU1xOtJro5/JWRnecrOq', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$hOfjDMDHAixonvDDRFnnAuhz64UAsOlXcEU1xOtJro5/JWRnecrOq', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$ir2wVPIc9Hnb2tAkiWoXAuPSBjDKCLK/BsYUR9O/0swrWqEuFfXNW', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$ir2wVPIc9Hnb2tAkiWoXAuPSBjDKCLK/BsYUR9O/0swrWqEuFfXNW', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$5UCiy7ktwNbMWIlMbvQet.LOPBOi3DcjeDDugeb25CGHu5hR8Azzq', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$5UCiy7ktwNbMWIlMbvQet.LOPBOi3DcjeDDugeb25CGHu5hR8Azzq', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$CDpLVlon3Lvyyt1gFFFI3egTVGWsNylJaODfyFWE3XwpXj3JgjGSO', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$CDpLVlon3Lvyyt1gFFFI3egTVGWsNylJaODfyFWE3XwpXj3JgjGSO', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "microposts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$KRRbtXi5fSrrK/sOGFHCdu/tWYeYyG7FLlHTphnPkrm/mJISL2z0C', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$KRRbtXi5fSrrK/sOGFHCdu/tWYeYyG7FLlHTphnPkrm/mJISL2z0C', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "microposts"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$ST1tAfc0KhS0NDj4KMEXpuPcOdTize33piaW4p7hx3xsbSZikMp6q', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)[0m
+SQLite3::SQLException: table users has no column named archer: INSERT INTO "users" ("name", "email", "password_digest", "archer", "created_at", "updated_at", "id") VALUES ('Sterling Archer', 'duchess@example.gov', '$2a$04$ST1tAfc0KhS0NDj4KMEXpuPcOdTize33piaW4p7hx3xsbSZikMp6q', NULL, '2015-10-01 15:39:40', '2015-10-01 15:39:40', 762146111)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (169.4ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (155.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (165.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (174.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (144.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (144.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001102130')
+  [1m[36m (178.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929132721')[0m
+  [1m[35m (178.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150929142752')
+  [1m[36m (177.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150930140520')[0m
+  [1m[35m (189.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930141019')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
