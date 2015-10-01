@@ -44,4 +44,19 @@ end
     session.delete(:user_id)
     @current_user = nil
   end
+  # Retourne true si l'utilisateur donné est celui qui est courant
+  def current_user?(user)
+    user == current_user
+  end
+  # Redirige a l'endroit stocké
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  # Stock l'url a laquelle il a essayer d'accepter.
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
+  end
+
 end
