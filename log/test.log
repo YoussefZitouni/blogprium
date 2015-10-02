@@ -16471,3 +16471,24 @@ SQLite3::SQLException: table users has no column named archer: INSERT INTO "user
   [1m[36m (177.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150930140520')[0m
   [1m[35m (189.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930141019')
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (145.0ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (125.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar, "admin" boolean DEFAULT 'f', "activation_digest" varchar, "activated" boolean DEFAULT 'f', "activated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (165.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (153.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (155.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (155.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151002090430')
+  [1m[36m (178.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929132721')[0m
+  [1m[35m (178.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150929142752')
+  [1m[36m (144.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150930140520')[0m
+  [1m[35m (155.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930141019')
+  [1m[36m (155.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151001102130')[0m
+  [1m[35m (144.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001160036')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

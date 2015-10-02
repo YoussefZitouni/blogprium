@@ -15,12 +15,12 @@ def current_user
 		@current_user ||= User.find_by(id: user_id)
 
 		user = User.find_by(id: user_id)
-		if user && user.authenticated?(cookies[:remember_token])
-			log_in user
-			@current_user = user
-		end
-	end
-	return @current_user
+    if user && user.authenticated?(:remember, cookies[:remember_token])
+     log_in user
+     @current_user = user
+   end
+ end
+ return @current_user
 end
 
 def logged_in?
@@ -32,11 +32,11 @@ end
   	@current_user = nil
   end
     # Delete les cookies, "oublie" l'utilisateur 
-  def forget(user)
-    user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
-  end
+    def forget(user)
+      user.forget
+      cookies.delete(:user_id)
+      cookies.delete(:remember_token)
+    end
 
   # Déconnecte l'utilisateur courant 
   def log_out
@@ -54,7 +54,7 @@ end
     session.delete(:forwarding_url)
   end
 
-  # Stock l'url a laquelle il a essayer d'accepter.
+  # Stock l'url a laquelle il a essayer d'acceder.
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end

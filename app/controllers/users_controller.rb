@@ -21,10 +21,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Bienvenue sur mon blog!"
-
-      redirect_to @user
+      @user.send_activation_email
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "Vérifiez votre email pour activer votre compte"
+      redirect_to root_url
     else
       render 'new'
     end
@@ -63,15 +63,15 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
-  
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to users_url
-  end
-   # Confirme un utilisateur en admin
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
 
+    def destroy
+      User.find(params[:id]).destroy
+      flash[:success] = "User deleted"
+      redirect_to users_url
+    end
+   # Confirme un utilisateur en admin
+   def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
+
+end
