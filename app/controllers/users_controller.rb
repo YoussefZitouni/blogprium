@@ -2,16 +2,20 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
-  def new
-  end
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
+    :following, :followers]
+    def new
+    end
 
-  def index
-    @users = User.paginate(page: params[:page])
-  end
+    def index
+      @users = User.paginate(page: params[:page])
+    end
 
   # Fonction servant a voir les utilisateurs en servant de leur id like /users/1
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
+
   end
   
   def new
@@ -24,7 +28,7 @@ class UsersController < ApplicationController
       @user.send_activation_email
       UserMailer.account_activation(@user).deliver_now
       flash[:info] = "Vérifiez votre email pour activer votre compte"
-      redirect_to root_url
+      redirect_to signup_path
     else
       render 'new'
     end
@@ -43,6 +47,19 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  def following
+    @title = "Abonnements"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Abonnés"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
   private
 

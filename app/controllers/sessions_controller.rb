@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 	def new
 	end
+	
 	# Connecte l'utilisateur et le redirige vers la page show
 	def create    
 		user = User.find_by(email: params[:session][:email].downcase)
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
 			if user.activated?
 				log_in user
 				params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-				redirect_back_or user
+				return redirect_back_or user
 			else
 				message  = "Compte non activé ! "
 				message += "Check tes mails pour activer ton compte :)"

@@ -1,5 +1,15 @@
 class User < ActiveRecord::Base
-
+  # dependent : destroy sert a supprimé tout les posts d'un user si son compte est supprimé
+  has_many :microposts, dependent: :destroy
+  has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name:  "Relationship",
+  foreign_key: "follower_id",
+  dependent:   :destroy
+  has_many :passive_relationships, class_name:  "Relationship",
+  foreign_key: "followed_id",
+  dependent:   :destroy
+  has_many :following, through: :active_relationships,  source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -35,15 +45,15 @@ class User < ActiveRecord::Base
   # end
 
       # Retourne true si le token et le "digest" match ensemble ( pas trop conmpris le digest, ca doit etre le token crée a partir du mot de passe)
-    def authenticated?(attribute, token)
-    digest = send("#{attribute}_digest")
-    return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
-  end
+      def authenticated?(attribute, token)
+        digest = send("#{attribute}_digest")
+        return false if digest.nil?
+        BCrypt::Password.new(digest).is_password?(token)
+      end
     # Set nil à remember_digest, donc remember_digest est nil 
-  def forget
-    update_attribute(:remember_digest, nil)
-  end
+    def forget
+      update_attribute(:remember_digest, nil)
+    end
   # Active un comtpe
   def activate
     update_attribute(:activated,    true)
@@ -54,6 +64,27 @@ class User < ActiveRecord::Base
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
+  def feed
+   following_ids = "SELECT followed_id FROM relationships
+   WHERE  follower_id = :user_id"
+   Micropost.where("user_id IN (#{following_ids})
+     OR user_id = :user_id", user_id: id)
+ end
+  # Suivre un utilisateur
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  # Unfollows un utilisateur.
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  # Retourne true si l'utilisateur courant suit un autre utilisateur
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
   private
 
     # Converti l'email en minuscule
@@ -66,4 +97,4 @@ class User < ActiveRecord::Base
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
-end
+  end
